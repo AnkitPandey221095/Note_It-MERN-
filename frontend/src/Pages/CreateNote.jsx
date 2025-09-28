@@ -3,6 +3,7 @@ import {Link, useNavigate} from 'react-router'
 import {ArrowLeftIcon} from 'lucide-react'
 import {toast} from "react-hot-toast"
 import axios from "axios"
+import api from "../lib/axios"
 
 const CreateNote = () => {
   const [title,setTitle]=useState("")
@@ -17,7 +18,7 @@ const CreateNote = () => {
     }
     setLoading(true)
     try{
-      await axios.post("http://localhost:3002/api/notes",{title,content})
+      await api.post("/notes",{title,content})
       toast.success("Note created successfull!")
       navigate("/")
     }catch(err){

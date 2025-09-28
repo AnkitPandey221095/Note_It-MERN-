@@ -1,9 +1,8 @@
-import React from 'react'
 import {Routes, Route} from 'react-router'
 import Home from './Pages/Home'
 import CreateNote from './Pages/CreateNote'
 import NoteDetails from './Pages/NoteDetail'
-import {toast} from "react-hot-toast"
+
 const App = () => {
   return (
     <div className='relative h-full w-full' data-theme="forest">

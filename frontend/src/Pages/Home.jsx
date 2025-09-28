@@ -3,6 +3,7 @@ import Nav from "../component/Nav"
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import NoteCard from '../component/NoteCard'
+import api from '../lib/axios'
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
   useEffect(()=>{
     const fetchFuction = async ()=>{
       try{
-        const res = await axios.get("http://localhost:3002/api/notes")
+        const res = await api.get("/notes")
         setNotes(res.data)
         setLoading(false)
       }catch(err){

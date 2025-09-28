@@ -5,6 +5,7 @@ import { useNavigate, useParams ,Link} from 'react-router'
 import axios from 'axios'
 import {LoaderIcon ,ArrowLeftIcon,Trash2Icon} from 'lucide-react'
 import { toast } from 'react-hot-toast'
+import api from '../lib/axios'
 
 const NoteDetail = () => {
   const [note,setNote]=useState(null)
@@ -17,7 +18,7 @@ const NoteDetail = () => {
   useEffect(()=>{
     const fetchNote= async()=>{
       try{
-        const res =await axios.get(`http://localhost:3002/api/notes/${id}`)
+        const res =await api.get(`/notes/${id}`)
         setNote(res.data)
       }catch(err){
         console.log("Error occured",err)
@@ -34,7 +35,7 @@ const NoteDetail = () => {
     if(!window.confirm("Are you sure, you want to delete this note?")) return;
 
     try{
-      await axios.delete(`http://localhost:3002/api/notes/${id}`)
+      await api.delete(`/notes/${id}`)
       toast.success("Note deleted Successfully")
     }catch(err){
       console.log("Error occured",err)
@@ -48,11 +49,10 @@ const NoteDetail = () => {
   const handleSave= async()=>{
     if(!note.title.trim() || !note.content.trim()){
       toast.error("Title and content are required")
-      return;
     }
     setSaving(true)
     try{
-      await axios.put(`http://localhost:3002/api/notes/${id}`,note)
+      await api.put(`/notes/${id}`,note)
       toast.success("Note updated successfully")  
       navigate("/")
     }catch(err){
