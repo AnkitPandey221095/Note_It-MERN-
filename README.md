@@ -2,7 +2,6 @@
 
 A web-based note-taking application built with the **MERN** stack: MongoDB, Express, React, Node.  
 This project lets users create, edit, delete, and view notes with a clean UI and backend API.
-Direct Link to the website: https://note-it-mern.onrender.com/
 
 ---
 
@@ -59,3 +58,20 @@ npm run build
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run start
 ```
+
+## 🌍 Live Demo
+
+👉 **[View Live Site Here](https://note-it-mern.onrender.com/)**
+
+---
+
+## 🙌 Thanks for Checking It Out!
+
+If you liked the project or have feedback, feel free to connect!  
+Let’s keep building creative and interactive web experiences. 🚀
+
+---
+
+## ⚡ Tags
+
+`#FullStack` `#frontend` `#backend` `#database` `deployment` `#tailwind` `#react-hot-toast`
