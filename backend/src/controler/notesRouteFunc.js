@@ -28,6 +28,13 @@ export async function getidreq(req,res){
 export function postreq(req,res){
     try{
         const {title,content}= req.body
+
+        if (!title?.trim() || !content?.trim()) {
+            return res.status(400).json({
+            message: "Title and content are required",
+            });
+        }
+
         const newNote = new Note({title,content})
         newNote.save()
         res.status(201).json({message:"Note created successfully"})

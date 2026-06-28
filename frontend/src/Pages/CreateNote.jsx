@@ -15,6 +15,7 @@ const CreateNote = () => {
     e.preventDefault()
     if(!title.trim() || !content.trim()){
       toast.error("Please fill all the fields")
+      return;
     }
     setLoading(true)
     try{
